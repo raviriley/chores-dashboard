@@ -5,6 +5,7 @@
   "scripts": {
     "format": "prettier --write . --cache --cache-strategy content",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit --pretty --project tsconfig.json",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
