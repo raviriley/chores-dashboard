@@ -40,10 +40,9 @@ export default function Weeks() {
 
   return (
     <>
-      <Strikes weeks={data} />
       <Card className="m-2">
         <CardHeader>
-          <CardTitle>Latest Weeks</CardTitle>
+          <CardTitle>This and Last Weeks</CardTitle>
         </CardHeader>
         <CardContent>
           <WeeksDataTable
@@ -51,6 +50,7 @@ export default function Weeks() {
           />
         </CardContent>
       </Card>
+      <Strikes weeks={data} />
     </>
   );
 }
