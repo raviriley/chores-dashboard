@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const file = await fs.readFile(
-    process.cwd() + "/chores-bot/weeks.json",
+    process.cwd() + "../parker-chores-bot/weeks.json",
     "utf8",
   );
 
