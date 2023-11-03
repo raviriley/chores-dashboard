@@ -42,7 +42,7 @@ export default function Weeks() {
     <>
       <Card className="m-2">
         <CardHeader>
-          <CardTitle>This and Last Weeks</CardTitle>
+          <CardTitle>This and Last Week&apos;s Chores</CardTitle>
         </CardHeader>
         <CardContent>
           <WeeksDataTable
