@@ -1,11 +1,21 @@
 import CodeLog from "@/components/code-log";
+import { useEffect, useState } from "react";
 
-const log_lines = [
-  "sent message to 1234567890",
-  "sent message to 1234567890",
-  "sent message to 1234567890 with id 7863541234",
-];
+async function getLogs() {
+  const response = await fetch("api/logs");
+  const logs = (await response.json()) as string[];
+
+  return logs || ([] as string[]);
+}
 
 export default function Logs() {
-  return <CodeLog log_lines={log_lines} />;
+  const [logs, setLogs] = useState<string[]>([]); // Initialized with an empty array
+
+  useEffect(() => {
+    getLogs().then((logs) => {
+      setLogs(logs);
+    });
+  }, []); // Empty dependency array means it runs once when the component mounts
+
+  return <CodeLog log_lines={logs} />;
 }

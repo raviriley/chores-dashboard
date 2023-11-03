@@ -5,11 +5,21 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const file = await fs.readFile(
-    process.cwd() + "/../parker-chores-bot/weeks.json",
-    "utf8",
-  );
-
-  const data = JSON.parse(file);
-  res.status(200).json(data);
+  try {
+    // get chores_log.txt file
+    const file = await fs.readFile(
+      process.cwd() + "/../parker-chores-bot/chores_log.txt",
+      "utf8",
+    );
+    // read text content of chores_log.txt
+    let data = file.split("\n");
+    // return text content of chores_log.txt
+    res.status(200).json(data);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message });
+    } else {
+      res.status(500).json({ error: "An unknown error occurred." });
+    }
+  }
 }
