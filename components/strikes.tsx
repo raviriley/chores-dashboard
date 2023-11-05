@@ -10,38 +10,33 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useEffect, useState } from "react";
 
 type Strike = {
   name: string;
   strikes: number;
 };
 
-export default function Strikes({ weeks }: { weeks: Week[] }) {
-  // calculate the total number of not completed weeks per person, not including the current week
-
-  // map of name to strike num
-  const strikes = new Map<string, number>();
-  weeks
-    .filter((week) => !week.completed && !week.current)
-    .forEach((week) => {
-      const name = week.name;
-      if (name && strikes.has(name)) {
-        strikes.set(name, strikes.get(name)! + 1);
-      } else {
-        strikes.set(name, 1);
-      }
-    });
-
-  // sort strikes by value
-  const strikesArray = Array.from(strikes);
-  strikesArray.sort((a, b) => b[1] - a[1]);
-
-  const data = strikesArray.map((strike) => {
-    return {
-      name: strike[0],
-      strikes: strike[1],
-    };
+async function getStrikes(weeks: Week[]) {
+  const response = await fetch("api/strikes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(weeks),
   });
+  const strikes = (await response.json()) as Strike[];
+  return strikes;
+}
+
+export default function Strikes({ weeks }: { weeks: Week[] }) {
+  const [strikes, setStrikes] = useState<Strike[]>([]);
+
+  useEffect(() => {
+    getStrikes(weeks).then((strikes) => {
+      setStrikes(strikes);
+    });
+  }, [weeks]);
 
   const columns: ColumnDef<Strike>[] = [
     {
@@ -51,9 +46,27 @@ export default function Strikes({ weeks }: { weeks: Week[] }) {
       ),
     },
     {
+      accessorKey: "incompletes",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Failed Chores" />
+      ),
+    },
+    {
       accessorKey: "strikes",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Strikes" />
+      ),
+    },
+    {
+      accessorKey: "paid",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Paid" />
+      ),
+    },
+    {
+      accessorKey: "remaining",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Remaining" />
       ),
     },
   ];
@@ -61,10 +74,10 @@ export default function Strikes({ weeks }: { weeks: Week[] }) {
   return (
     <Card className="m-2">
       <CardHeader>
-        <CardTitle>Strikes</CardTitle>
+        <CardTitle>Incomplete Chores</CardTitle>
       </CardHeader>
       <CardContent>
-        <DataTable columns={columns} data={data} />
+        <DataTable columns={columns} data={strikes} />
       </CardContent>
     </Card>
   );
