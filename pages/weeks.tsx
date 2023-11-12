@@ -2,6 +2,13 @@ import { Badge } from "@/components/ui/badge";
 import WeeksDataTable from "@/components/weeks-data-table";
 import { Week } from "@/pages/api/weeks";
 import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 async function getWeeks() {
   const response = await fetch("api/weeks");
@@ -37,7 +44,14 @@ export default function Weeks() {
 
   return (
     <>
-      <WeeksDataTable data={data} />
+      <Card className="m-2">
+        <CardHeader>
+          <CardTitle>All Weeks</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <WeeksDataTable data={data} />
+        </CardContent>
+      </Card>
     </>
   );
 }
