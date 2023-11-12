@@ -22,6 +22,10 @@ const navigation = [
     href: "/weeks",
   },
   {
+    name: "Instructions",
+    href: "/instructions",
+  },
+  {
     name: "Log",
     href: "/log",
   },
