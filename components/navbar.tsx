@@ -1,12 +1,8 @@
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
@@ -36,9 +32,9 @@ export default function Navbar({
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <div>
+    <div className="m-2">
       <NavigationMenu>
-        <NavigationMenuList>
+        <NavigationMenuList className="mr-1">
           {navigation.map((nav, i) => (
             <NavigationMenuItem key={i}>
               <Link href={nav.href} legacyBehavior passHref>
