@@ -13,6 +13,9 @@ export default async function handler(
     );
     // read text content of chores_log.txt
     let data = file.split("\n");
+    if (data.length === 1 && data[0] === "") {
+      data = ["Log file is empty."];
+    }
     // return text content of chores_log.txt
     res.status(200).json(data);
   } catch (error: unknown) {
