@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
 type CodeLogProps = {
   log_lines: string[];
@@ -32,7 +34,12 @@ export default function CodeLog({ log_lines }: CodeLogProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <p>View raw txt file</p>
+        <Link
+          href={"/api/logs"}
+          className={buttonVariants({ variant: "outline" })}
+        >
+          View raw txt file
+        </Link>
       </CardFooter>
     </Card>
   );
