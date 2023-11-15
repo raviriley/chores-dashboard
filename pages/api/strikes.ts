@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import { Week } from "./weeks";
 
 const paid = {
-  Ethan: 0,
+  Ethan: 1,
   Jay: 0,
   Luca: 0,
   Michael: 0,
