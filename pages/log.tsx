@@ -3,9 +3,12 @@ import { useEffect, useState } from "react";
 
 async function getLogs() {
   const response = await fetch("api/logs");
+  if (!response.ok) {
+    console.log("Failed to fetch logs");
+    return [] as string[]
+  }
   const logs = (await response.json()) as string[];
-
-  return logs || ([] as string[]);
+  return logs || [] as string[];
 }
 
 export default function Logs() {

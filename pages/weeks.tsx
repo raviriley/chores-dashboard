@@ -12,6 +12,10 @@ import {
 
 async function getWeeks() {
   const response = await fetch("api/weeks");
+  if (!response.ok) {
+    console.log("Failed to fetch weeks");
+    return [] as Week[];
+  }
   const weeks = (await response.json()) as Week[];
 
   return weeks;
