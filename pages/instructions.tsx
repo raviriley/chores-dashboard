@@ -48,7 +48,8 @@ export default function Instructions() {
           <CardTitle>Chores Instructions</CardTitle>
         </CardHeader>
         <CardContent>
-          <Accordion type="single" collapsible>
+          <Accordion type="single" collapsible defaultValue="item-0">
+            {/* first accordion item (item-0) is open by default */}
             {chores.map((chore, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger>{chore.subject}</AccordionTrigger>
