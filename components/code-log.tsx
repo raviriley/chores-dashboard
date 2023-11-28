@@ -14,6 +14,9 @@ type CodeLogProps = {
 };
 
 export default function CodeLog({ log_lines }: CodeLogProps) {
+  if (!log_lines) {
+    log_lines = ["No logs found"];
+  }
   return (
     <Card className="m-2">
       <CardHeader>
