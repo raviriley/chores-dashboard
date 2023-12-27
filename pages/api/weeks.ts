@@ -28,19 +28,10 @@ export default async function handler(
   try {
     let file = "";
     try {
-      file = await fs.readFile(
-        process.cwd() + "/../parker-chores-bot/weeks.json",
-        "utf8",
-      );
+      file = await fs.readFile(process.cwd() + "/json/weeks.json", "utf8");
     } catch (error: any) {
-      // if no file is found, look for weeks.json in the current directory
-      console.log(`\nweeks.json not found in parent directory: ${error}`);
-      console.log("using weeks.json in json directory\n");
-      try {
-        file = await fs.readFile(process.cwd() + "/json/weeks.json", "utf8");
-      } catch (error) {
-        throw new Error(`weeks.json not found in json directory: ${error}`);
-      }
+      // this file should always exist, so if it doesn't, throw an error
+      throw new Error("weeks.json does not exist");
     }
 
     const data: WeekInput = JSON.parse(file);
