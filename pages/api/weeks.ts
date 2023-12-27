@@ -33,16 +33,16 @@ export default async function handler(
         "utf8",
       );
     } catch (error: any) {
-      // if no file is found, look for weeks.json in this repo's json directory
+      // if no file is found, look for weeks.json in this repo's data directory
       console.log(`\nweeks.json not found in chores bot repo: ${error}`);
       try {
-        console.log("using weeks.json in /json directory\n");
+        console.log("using weeks.json in /data directory\n");
         file = await fs.readFile(
-          path.join(process.cwd(), "json", "weeks.json"),
+          path.join(process.cwd(), "data", "weeks.json"),
           "utf8",
         );
       } catch (error) {
-        throw new Error(`weeks.json not found in json directory: ${error}`);
+        throw new Error(`weeks.json not found in data directory: ${error}`);
       }
     }
 
