@@ -29,12 +29,21 @@ export default async function handler(
     let file = "";
     try {
       file = await fs.readFile(
-        path.join(process.cwd(), "json", "weeks.json"),
+        process.cwd() + "/../parker-chores-bot/weeks.json",
         "utf8",
       );
     } catch (error: any) {
-      // this file should always exist, so if it doesn't, throw an error
-      throw new Error("json/weeks.json does not exist");
+      // if no file is found, look for weeks.json in this repo's json directory
+      console.log(`\nweeks.json not found in chores bot repo: ${error}`);
+      try {
+        console.log("using weeks.json in /json directory\n");
+        file = await fs.readFile(
+          path.join(process.cwd(), "json", "weeks.json"),
+          "utf8",
+        );
+      } catch (error) {
+        throw new Error(`weeks.json not found in json directory: ${error}`);
+      }
     }
 
     const data: WeekInput = JSON.parse(file);
