@@ -36,7 +36,11 @@ export default async function handler(
       // if no file is found, look for weeks.json in the current directory
       console.log(`\nweeks.json not found in parent directory: ${error}`);
       console.log("using weeks.json in json directory\n");
-      file = await fs.readFile(process.cwd() + "/json/weeks.json", "utf8");
+      try {
+        file = await fs.readFile(process.cwd() + "/json/weeks.json", "utf8");
+      } catch (error) {
+        throw new Error(`weeks.json not found in json directory: ${error}`);
+      }
     }
 
     const data: WeekInput = JSON.parse(file);
@@ -60,6 +64,7 @@ export default async function handler(
     res.status(200).json(result);
   } catch (error) {
     if (error instanceof Error) {
+      console.log(error);
       res.status(500).json({ error: error.message });
     } else {
       res.status(500).json({ error: `An unknown error occurred: ${error}` });
