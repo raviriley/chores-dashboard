@@ -1,6 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { promises as fs } from "fs";
+import fs from "fs/promises";
+import path from "path";
 
 type TaskDetails = {
   task: string;
@@ -28,10 +28,13 @@ export default async function handler(
   try {
     let file = "";
     try {
-      file = await fs.readFile(process.cwd() + "/json/weeks.json", "utf8");
+      file = await fs.readFile(
+        path.join(process.cwd(), "json", "weeks.json"),
+        "utf8",
+      );
     } catch (error: any) {
       // this file should always exist, so if it doesn't, throw an error
-      throw new Error("weeks.json does not exist");
+      throw new Error("json/weeks.json does not exist");
     }
 
     const data: WeekInput = JSON.parse(file);
