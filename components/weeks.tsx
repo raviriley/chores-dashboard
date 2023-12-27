@@ -16,7 +16,12 @@ export default function Weeks() {
   const [currentWeek, setCurrentWeek] = useState<number>(0);
 
   const fetchData = async () => {
-    const weeks = await getWeeks();
+    let weeks = await getWeeks();
+    // if weeks is not array, make it empty array
+    if (!Array.isArray(weeks)) {
+      weeks = [];
+    }
+
     let maxWeekNumber = 0;
     weeks.forEach((week) => {
       if (week.week_number > maxWeekNumber) {

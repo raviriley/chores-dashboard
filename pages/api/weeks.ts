@@ -26,11 +26,20 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   try {
-    const file = await fs.readFile(
-      process.cwd() + "/../parker-chores-bot/weeks.json",
-      "utf8",
-    );
-    const data: WeekInput = JSON.parse(file);
+    let data: WeekInput = {};
+    try {
+      let file = await fs.readFile(
+        process.cwd() + "/../parker-chores-bot/weeks.json",
+        "utf8",
+      );
+      data = JSON.parse(file);
+    } catch (error) {
+      console.log("\nweeks.json not found in parent directory:");
+      console.log(error + "\n");
+      // if no file is found, look for weeks.json in the current directory
+      let file = await fs.readFile(process.cwd() + "/weeks.json", "utf8");
+      data = JSON.parse(file);
+    }
 
     // transform weeks.json into an array of Week objects
     const result = [];
