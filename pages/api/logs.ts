@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { promises as fs } from "fs";
+import fs from "fs/promises";
+import path from "path";
 
 export default async function handler(
   req: NextApiRequest,
@@ -7,10 +8,26 @@ export default async function handler(
 ) {
   try {
     // get chores_log.txt file
-    const file = await fs.readFile(
-      process.cwd() + "/../parker-chores-bot/chores_log.txt",
-      "utf8",
-    );
+    let file = "";
+    try {
+      file = await fs.readFile(
+        process.cwd() + "/../parker-chores-bot/chores_log.txt",
+        "utf8",
+      );
+    } catch (error) {
+      // if no file is found, look for chores_log.txt in this repo's data directory
+      console.log(`\nchores_log.txt not found in chores bot repo: ${error}`);
+      try {
+        console.log("using chores_log.txt in /data directory\n");
+        file = await fs.readFile(
+          path.join(process.cwd(), "data", "chores_log.txt"),
+          "utf8",
+        );
+      } catch (error) {
+        throw new Error(`chores_log.txt not found in data directory: ${error}`);
+      }
+    }
+
     // read text content of chores_log.txt
     let data = file.split("\n");
     if (data.length === 1 && data[0] === "") {
