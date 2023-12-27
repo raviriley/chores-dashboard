@@ -28,7 +28,7 @@ export default async function handler(
   try {
     let data: WeekInput = {};
     try {
-      let file = await fs.readFile(
+      const file = await fs.readFile(
         process.cwd() + "/../parker-chores-bot/weeks.json",
         "utf8",
       );
@@ -37,7 +37,7 @@ export default async function handler(
       console.log("\nweeks.json not found in parent directory:");
       console.log(error + "\n");
       // if no file is found, look for weeks.json in the current directory
-      let file = await fs.readFile(process.cwd() + "/weeks.json", "utf8");
+      const file = await fs.readFile(process.cwd() + "/weeks.json", "utf8");
       data = JSON.parse(file);
     }
 
