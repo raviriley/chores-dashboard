@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -75,6 +74,7 @@ export default function Strikes({ weeks }: { weeks: Week[] }) {
     <Card className="m-2">
       <CardHeader>
         <CardTitle>Incomplete Chores</CardTitle>
+        <CardDescription>everyone gets one free strike</CardDescription>
       </CardHeader>
       <CardContent>
         <DataTable columns={columns} data={strikes} />
