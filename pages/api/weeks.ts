@@ -32,7 +32,6 @@ export default async function handler(
         process.cwd() + "/../parker-chores-bot/weeks.json",
         "utf8",
       );
-    } catch (error) {
     } catch (error: any) {
       // if no file is found, look for weeks.json in the current directory
       console.log(`\nweeks.json not found in parent directory: ${error}`);
