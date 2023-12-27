@@ -33,10 +33,11 @@ export default async function handler(
         "utf8",
       );
     } catch (error) {
+    } catch (error: any) {
       // if no file is found, look for weeks.json in the current directory
-      file = await fs.readFile(process.cwd() + "/weeks.json", "utf8");
-      console.log("\nweeks.json not found in parent directory:");
-      console.log(error + "\n");
+      console.log(`\nweeks.json not found in parent directory: ${error}`);
+      console.log("using weeks.json in json directory\n");
+      file = await fs.readFile(process.cwd() + "/json/weeks.json", "utf8");
     }
 
     const data: WeekInput = JSON.parse(file);
