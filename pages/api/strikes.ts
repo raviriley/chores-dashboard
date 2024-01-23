@@ -14,6 +14,19 @@ const paid = {
   Tim: 0,
 };
 
+const additionalStrikes = {
+  Ethan: 0,
+  Jay: 0,
+  Luca: 0,
+  Michael: 0,
+  Naman: 0,
+  Nick: 0,
+  Pavan: 0,
+  Ravi: 0,
+  Rohan: 1,
+  Tim: 0,
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -53,7 +66,7 @@ export default async function handler(
       return {
         name: name,
         incompletes: strike[1],
-        strikes: strike[1] - 1,
+        strikes: strike[1] - 1 + additionalStrikes[name],
         paid: paid[name],
         remaining: strike[1] - 1 - paid[name],
       };
