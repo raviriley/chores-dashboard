@@ -15,7 +15,7 @@ const paid = {
 };
 
 const additionalStrikes = {
-  Ethan: 1,
+  Ethan: 0,
   Jay: 0,
   Luca: 0,
   Michael: 0,
@@ -23,7 +23,7 @@ const additionalStrikes = {
   Nick: 0,
   Pavan: 0,
   Ravi: 0,
-  Rohan: 1,
+  Rohan: 1, // trash
   Tim: 0,
 };
 
