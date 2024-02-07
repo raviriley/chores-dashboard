@@ -14,10 +14,10 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
     },
-    "types": ["bun-types"]
+    "types": ["bun-types"],
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "components/ui"]
+  "exclude": ["node_modules", "components/ui"],
 }
