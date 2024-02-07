@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { Week } from "./weeks";
 
 const paid = {
-  Ethan: 3,
+  Ethan: 2,
   Jay: 0,
   Luca: 0,
   Michael: 0,
@@ -10,7 +10,7 @@ const paid = {
   Nick: 0,
   Pavan: 0,
   Ravi: 0,
-  Rohan: 1,
+  Rohan: 2,
   Tim: 0,
 };
 
@@ -68,7 +68,7 @@ export default async function handler(
         incompletes: strike[1],
         strikes: strike[1] - 1 + additionalStrikes[name],
         paid: paid[name],
-        remaining: strike[1] - 1 - paid[name],
+        remaining: strike[1] - 1 - paid[name] + additionalStrikes[name],
       };
     });
     res.status(200).json(data);

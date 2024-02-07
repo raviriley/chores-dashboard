@@ -74,7 +74,7 @@ export default function Strikes({ weeks }: { weeks: Week[] }) {
     <Card className="m-2">
       <CardHeader>
         <CardTitle>Incomplete Chores</CardTitle>
-        <CardDescription>everyone gets one free strike</CardDescription>
+        <CardDescription>everyone gets one free failed chore</CardDescription>
       </CardHeader>
       <CardContent>
         <DataTable columns={columns} data={strikes} />
