@@ -2,11 +2,11 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { Week } from "./weeks";
 
 const paid = {
-  Ethan: 3,
+  Ethan: 2,
   Jay: 0,
   Luca: 0,
   Michael: 0,
-  Naman: 0,
+  Naman: 1,
   Nick: 0,
   Pavan: 0,
   Ravi: 0,
