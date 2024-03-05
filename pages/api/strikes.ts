@@ -10,7 +10,7 @@ const paid = {
   Nick: 0,
   Pavan: 0,
   Ravi: 0,
-  Rohan: 2,
+  Rohan: 3,
   Tim: 0,
 };
 
