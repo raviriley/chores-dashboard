@@ -716,7 +716,7 @@
   "week 22": {
     "Ethan": {
       "task": "Floor 2 Bathroom Shower & Floor",
-      "completed": false
+      "completed": true
     },
     "Jay": {
       "task": "Floor 1 Bathroom Shower & Floor",
@@ -732,7 +732,7 @@
     },
     "Naman": {
       "task": "Floor 3 Bathroom Sink Area, Toilet, & Trash",
-      "completed": false
+      "completed": true
     },
     "Nick": {
       "task": "Downstairs Living Room",
@@ -740,7 +740,7 @@
     },
     "Pavan": {
       "task": "Floor 2 Bathroom Sink Area, Toilet, & Trash",
-      "completed": false
+      "completed": true
     },
     "Ravi": {
       "task": "Floor 1 Bathroom Sink Area, Toilet, & Trash",
@@ -748,7 +748,7 @@
     },
     "Rohan": {
       "task": "Floor 3 Bathroom Shower & Floor",
-      "completed": false
+      "completed": true
     },
     "Tim": {
       "task": "Kitchen Counters, Island, & Stove",
@@ -758,42 +758,84 @@
   "week 23": {
     "Ethan": {
       "task": "Kitchen Counters, Island, & Stove",
-      "completed": false
+      "completed": true
     },
     "Jay": {
       "task": "Floor 2 Bathroom Shower & Floor",
-      "completed": false
+      "completed": true
     },
     "Luca": {
       "task": "Floor 1 Bathroom Shower & Floor",
-      "completed": false
+      "completed": true
     },
     "Michael": {
       "task": "Kitchen Sink, Drying Rack, & Dining Table",
-      "completed": false
+      "completed": true
     },
     "Naman": {
       "task": "Kitchen Floors & Trash",
-      "completed": false
+      "completed": true
     },
     "Nick": {
       "task": "Floor 3 Bathroom Sink Area, Toilet, & Trash",
-      "completed": false
+      "completed": true
     },
     "Pavan": {
       "task": "Downstairs Living Room",
-      "completed": false
+      "completed": true
     },
     "Ravi": {
       "task": "Floor 2 Bathroom Sink Area, Toilet, & Trash",
-      "completed": false
+      "completed": true
     },
     "Rohan": {
       "task": "Floor 1 Bathroom Sink Area, Toilet, & Trash",
-      "completed": false
+      "completed": true
     },
     "Tim": {
       "task": "Floor 3 Bathroom Shower & Floor",
+      "completed": true
+    }
+  },
+  "week 24": {
+    "Ethan": {
+      "task": "Floor 3 Bathroom Shower & Floor",
+      "completed": false
+    },
+    "Jay": {
+      "task": "Kitchen Counters, Island, & Stove",
+      "completed": false
+    },
+    "Luca": {
+      "task": "Floor 2 Bathroom Shower & Floor",
+      "completed": false
+    },
+    "Michael": {
+      "task": "Floor 1 Bathroom Shower & Floor",
+      "completed": false
+    },
+    "Naman": {
+      "task": "Kitchen Sink, Drying Rack, & Dining Table",
+      "completed": false
+    },
+    "Nick": {
+      "task": "Kitchen Floors & Trash",
+      "completed": false
+    },
+    "Pavan": {
+      "task": "Floor 3 Bathroom Sink Area, Toilet, & Trash",
+      "completed": false
+    },
+    "Ravi": {
+      "task": "Downstairs Living Room",
+      "completed": false
+    },
+    "Rohan": {
+      "task": "Floor 2 Bathroom Sink Area, Toilet, & Trash",
+      "completed": false
+    },
+    "Tim": {
+      "task": "Floor 1 Bathroom Sink Area, Toilet, & Trash",
       "completed": false
     }
   }
