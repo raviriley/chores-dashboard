@@ -23,8 +23,8 @@ const additionalStrikes = {
   Nick: 0,
   Pavan: 0,
   Ravi: 0,
-  Rohan: 1, // trash
-  Tim: 0,
+  Rohan: 0, // trash
+  Tim: -1,
 };
 
 export default async function handler(
