@@ -6,7 +6,7 @@ const paid = {
   Jay: 0,
   Luca: 0,
   Michael: 0,
-  Naman: 0,
+  Naman: 1,
   Nick: 0,
   Pavan: 0,
   Ravi: 0,
