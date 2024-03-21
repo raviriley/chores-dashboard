@@ -503,48 +503,6 @@
             "completed": true
         }
     },
-    "week 16": {
-        "Ethan": {
-            "task": "Kitchen Counters, Island, & Stove",
-            "completed": true
-        },
-        "Jay": {
-            "task": "Floor 2 Bathroom Shower & Floor",
-            "completed": true
-        },
-        "Luca": {
-            "task": "Floor 1 Bathroom Shower & Floor",
-            "completed": true
-        },
-        "Michael": {
-            "task": "Kitchen Sink, Drying Rack, & Dining Table",
-            "completed": true
-        },
-        "Naman": {
-            "task": "Kitchen Floors & Trash",
-            "completed": false
-        },
-        "Nick": {
-            "task": "Floor 3 Bathroom Sink Area, Toilet, & Trash",
-            "completed": true
-        },
-        "Pavan": {
-            "task": "Downstairs Living Room",
-            "completed": false
-        },
-        "Ravi": {
-            "task": "Floor 2 Bathroom Sink Area, Toilet, & Trash",
-            "completed": true
-        },
-        "Rohan": {
-            "task": "Floor 1 Bathroom Sink Area, Toilet, & Trash",
-            "completed": false
-        },
-        "Tim": {
-            "task": "Floor 3 Bathroom Shower & Floor",
-            "completed": false
-        }
-    },
     "week 18": {
         "Ethan": {
             "task": "Floor 3 Bathroom Sink Area, Toilet, & Trash",

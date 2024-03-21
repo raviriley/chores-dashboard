@@ -16,15 +16,15 @@ const paid = {
 
 const additionalStrikes = {
   Ethan: 0,
-  Jay: 0,
-  Luca: 0,
-  Michael: 0,
+  Jay: -1,
+  Luca: -1,
+  Michael: -2,
   Naman: 0,
-  Nick: 0,
+  Nick: -2,
   Pavan: 0,
-  Ravi: 0,
+  Ravi: -1,
   Rohan: 0, // trash
-  Tim: -1,
+  Tim: -2,
 };
 
 export default async function handler(
