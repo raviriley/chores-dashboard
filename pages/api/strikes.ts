@@ -67,10 +67,13 @@ export default async function handler(
         name: name,
         incompletes: strike[1],
         strikes: strike[1] - 1 + additionalStrikes[name],
+        modifier: additionalStrikes[name],
         paid: paid[name],
         remaining: strike[1] - 1 - paid[name] + additionalStrikes[name],
       };
     });
+    // sort data by strikes
+    data.sort((a, b) => b.strikes - a.strikes);
     res.status(200).json(data);
   } catch (error: unknown) {
     if (error instanceof Error) {

@@ -12,8 +12,22 @@ import {
 import { useEffect, useState } from "react";
 
 type Strike = {
-  name: string;
+  name:
+    | "Ethan"
+    | "Jay"
+    | "Luca"
+    | "Michael"
+    | "Naman"
+    | "Nick"
+    | "Pavan"
+    | "Ravi"
+    | "Rohan"
+    | "Tim";
+  incompletes: number;
   strikes: number;
+  modifier: number;
+  paid: number;
+  remaining: number;
 };
 
 async function getStrikes(weeks: Week[]) {
@@ -54,6 +68,12 @@ export default function Strikes({ weeks }: { weeks: Week[] }) {
       accessorKey: "strikes",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Strikes" />
+      ),
+    },
+    {
+      accessorKey: "modifier",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Modifier" />
       ),
     },
     {

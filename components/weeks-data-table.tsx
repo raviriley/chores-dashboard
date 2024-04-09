@@ -3,7 +3,6 @@ import { DataTable } from "@/components/data-table/data-table";
 import { Badge } from "@/components/ui/badge";
 import { Week } from "@/pages/api/weeks";
 import { ColumnDef } from "@tanstack/react-table";
-import { useState, useEffect } from "react";
 
 function getCompletedColor(completed: boolean, current: boolean) {
   if (completed) {
