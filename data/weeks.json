@@ -842,7 +842,7 @@
     "week 26": {
         "Ethan": {
             "task": "Floor 2 Bathroom Sink Area, Toilet, & Trash",
-            "completed": false
+            "completed": true
         },
         "Jay": {
             "task": "Floor 1 Bathroom Sink Area, Toilet, & Trash",
@@ -888,7 +888,7 @@
         },
         "Jay": {
             "task": "Floor 3 Bathroom Sink Area, Toilet, & Trash",
-            "completed": false
+            "completed": true
         },
         "Luca": {
             "task": "Downstairs Living Room",
